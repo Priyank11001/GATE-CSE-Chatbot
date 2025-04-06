@@ -4,7 +4,9 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.prompts import PromptTemplate
 from llama_cpp import Llama
 
-# Constants
+import os
+os.environ["PORT"] = os.environ.get("PORT", "8501")
+
 FAISS_DB_PATH = "vectorstore/faiss_db"
 EMBEDDING_MODEL_NAME = "intfloat/e5-small"
 LLM_MODEL_PATH = "models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf"
