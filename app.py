@@ -3,6 +3,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.prompts import PromptTemplate
 from llama_cpp import Llama
+from transformers.model_utils import init_empty_weights
+
 
 import os
 os.environ["PORT"] = os.environ.get("PORT", "8501")
