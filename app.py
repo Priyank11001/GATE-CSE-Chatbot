@@ -3,7 +3,7 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain.prompts import PromptTemplate
 from llama_cpp import Llama
-from transformers.utils import init_empty_weights
+# from transformers.utils import init_empty_weights
 
 
 import os
