@@ -1,10 +1,10 @@
 streamlit
-langchain
-langchain-community
-langchain-huggingface
-huggingface-hub
-transformers
-torch
+langchain>=0.1.13
+langchain-community>=0.0.30
+langchain-huggingface>=0.0.6
+huggingface-hub>=0.20.3
+transformers==4.36.2
+torch>=2.0.0
 faiss-cpu
 llama-cpp-python
 sentence-transformers
