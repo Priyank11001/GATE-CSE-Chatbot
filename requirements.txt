@@ -1,11 +1,33 @@
-streamlit
-transformers
-huggingface-hub
-langchain
-langchain-community
-langchain-huggingface
-sentence-transformers
-torch
-faiss-cpu
-tiktoken
-llama-cpp-python
+# Core RAG components
+langchain==0.3.22
+langchain-community==0.3.20
+langchain-core==0.3.50
+langchain-text-splitters==0.3.7
+langchain-huggingface==0.1.2
+faiss-cpu==1.10.0
+sentence-transformers==4.0.2
+transformers==4.50.3
+
+# LLM backend (if using LLaMA locally)
+llama_cpp_python==0.3.8
+
+# PDF loaders
+PyMuPDF==1.25.5
+pypdf==5.4.0
+
+# Embedding & vector utils
+numpy==2.2.4
+scikit-learn==1.6.1
+
+# Utilities
+python-dotenv==1.1.0
+pandas==2.2.3
+tqdm==4.67.1
+
+# UI (optional but often used)
+streamlit==1.44.1
+
+# HuggingFace support
+huggingface-hub==0.30.1
+safetensors==0.5.3
+requests==2.32.3
