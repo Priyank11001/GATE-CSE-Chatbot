@@ -57,7 +57,7 @@ def generate_answer(question, retriever, llm):
     docs = retriever.invoke(question)
     context = "\n\n".join(doc.page_content for doc in docs)
     prompt = PROMPT_TEMPLATE.format(context=context, question=question)
-    response = llm(prompt, max_tokens=512, stop=["Question:", "Context:"])
+    response = llm(prompt, max_tokens=1024, stop=["Question:", "Context:"])
     return response["choices"][0]["text"].strip()
 
 # --- Streamlit UI ---
