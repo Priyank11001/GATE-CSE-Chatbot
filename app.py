@@ -2,7 +2,7 @@ import streamlit as st
 from llama_cpp import Llama
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
-
+from transformers import AutoTokenizer
 # --- Constants ---
 FAISS_DB_PATH = "vectorstore/faiss_db"
 EMBEDDING_MODEL_NAME = "intfloat/e5-small"
@@ -39,7 +39,16 @@ You are an AI tutor helping students prepare for the GATE CSE exam. Use the prov
 # --- Loaders ---
 @st.cache_resource(show_spinner=False)
 def get_retriever_and_llm():
-    embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME, model_kwargs={"device": "cpu"})
+    # embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME, model_kwargs={"device": "cpu"})
+    if os.path.exists(EMBEDDING_MODEL_NAME):
+        tokenizer = AutoTokenizer.from_pretrained(EMBEDDING_MODEL_NAME,trust_remote_code = True)
+    else:
+        tokenizer = AutoTokenizer.from_pretrained("intfloat/e5-small",trust_remote_code = True)
+    
+    embeddings = HuggingFaceEmbeddings(
+        model_name = EMBEDDING_MODEL_NAME,
+        model_kwargs ={"device":"cpu"},
+    )
     vectorstore = FAISS.load_local(FAISS_DB_PATH, embeddings, allow_dangerous_deserialization=True)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
 
