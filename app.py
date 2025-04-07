@@ -98,4 +98,4 @@ with st.sidebar:
     st.subheader("🧾 Chat Options")
     if st.button("🗑️ Clear Chat"):
         st.session_state.chat_history = []
-        st.experimental_rerun()
+        st.rerun()
