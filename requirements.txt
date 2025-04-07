@@ -7,4 +7,5 @@ huggingface-hub==0.22.2
 sentence-transformers==2.5.1
 faiss-cpu==1.7.4
 llama-cpp-python==0.2.36
-torch==2.1.2
+torch==2.2.1
+tokenizers==0.18.1  # Ensures compatibility with transformers 4.36.2
