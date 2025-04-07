@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 from llama_cpp import Llama
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
