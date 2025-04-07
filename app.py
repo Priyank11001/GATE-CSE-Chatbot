@@ -51,7 +51,7 @@ def get_retriever_and_llm():
         model_kwargs ={"device":"cpu"},
     )
     vectorstore = FAISS.load_local(FAISS_DB_PATH, embeddings, allow_dangerous_deserialization=True)
-    retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
+    retriever = vectorstore.as_retriever(search_kwargs={"k": 8})
 
     llm = Llama(
         model_path=LLM_MODEL_PATH,
@@ -67,7 +67,7 @@ def generate_answer(question, retriever, llm):
     docs = retriever.invoke(question)
     context = "\n\n".join(doc.page_content for doc in docs)
     prompt = PROMPT_TEMPLATE.format(context=context, question=question)
-    response = llm(prompt, max_tokens=1024, stop=["Question:", "Context:"])
+    response = llm(prompt, max_tokens=8096, stop=["Question:", "Context:"])
     return response["choices"][0]["text"].strip()
 
 # --- Streamlit UI ---
