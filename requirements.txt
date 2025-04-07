@@ -2,7 +2,7 @@ streamlit
 langchain
 langchain-community
 langchain-huggingface 
-transformers==4.39.0
+transformers
 huggingface-hub
 sentence-transformers
 faiss-cpu
