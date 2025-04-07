@@ -41,10 +41,10 @@ You are an AI tutor helping students prepare for the GATE CSE exam. Use the prov
 @st.cache_resource(show_spinner=False)
 def get_retriever_and_llm():
     # embeddings = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME, model_kwargs={"device": "cpu"})
-    if os.path.exists(EMBEDDING_MODEL_NAME):
-        tokenizer = AutoTokenizer.from_pretrained(EMBEDDING_MODEL_NAME,trust_remote_code = True)
-    else:
-        tokenizer = AutoTokenizer.from_pretrained("intfloat/e5-small",trust_remote_code = True)
+    # if os.path.exists(EMBEDDING_MODEL_NAME):
+    #     tokenizer = AutoTokenizer.from_pretrained(EMBEDDING_MODEL_NAME,trust_remote_code = True)
+    # else:
+    #     tokenizer = AutoTokenizer.from_pretrained("intfloat/e5-small",trust_remote_code = True)
     
     embeddings = HuggingFaceEmbeddings(
         model_name = EMBEDDING_MODEL_NAME,

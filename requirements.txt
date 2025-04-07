@@ -1,9 +1,9 @@
 streamlit
-transformers>=4.37.0
-huggingface-hub>=0.23.0,<1.0
-langchain>=0.2.0
+transformers
+huggingface-hub
+langchain
 langchain-community
-langchain-huggingface>=0.1.0
+langchain-huggingface
 sentence-transformers
 torch
 faiss-cpu
